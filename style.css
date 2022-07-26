@@ -1,0 +1,155 @@
+:root {
+  font-size: 62.5%;
+  --color: #323238;
+  --text-color: #323238;
+  --body-color: #ffffff;
+  --primary-color: #323238;
+  --moodbtn-color: #E1E1E6;
+  --moodbtn-color-sec: #02799D;
+  --moodbtn-icon-color: #ffffff;
+  --hoverctrl-color: rgb(221, 8, 8);
+  --slider-color1: var(--color);
+  --slider-color2: var(--color);
+  --slider-color3: var(--color);
+  --slider-color4: var(--color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--text-color);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: var(--body-color);
+
+}
+
+main {
+  margin-top: -4rem;
+  display: flex;
+  align-items: center;
+  gap: 19.2rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sounds-display {
+  display: grid;
+  grid-template-areas:
+    'A B'
+    'C D';
+  gap: 3.2rem;
+}
+
+.hide {
+  display: none;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12.6rem;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+svg path,
+svg rect {
+  transition: fill ease 0.2s
+}
+
+.controls button:hover>svg path,
+.controls button:hover>svg rect {
+  fill: var(--hoverctrl-color);
+}
+
+button svg path,
+button svg rect {
+  fill: var(--primary-color);
+}
+
+.sounds-display .button {
+  height: 15.2rem;
+  width: 13.8rem;
+
+  background-color: var(--moodbtn-color);
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 2rem;
+  text-align: center;
+
+  position: relative;
+}
+
+.button button {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 2rem;
+  transition: background ease 0.2s;
+}
+
+.button button svg {
+  margin-bottom: 3.2rem;
+}
+
+.slider {
+  position: absolute;
+  bottom: 2.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9rem;
+  height: .4rem;
+  border-radius: .5rem;
+  -webkit-appearance: none;
+  background-color: var(--text-color);
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border-radius: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  cursor: pointer;
+}
+
+#forest-volume::-webkit-slider-thumb {
+  background-color: var(--slider-color1);
+}
+
+#rain-volume::-webkit-slider-thumb {
+  background-color: var(--slider-color2);
+}
+
+#coffee-volume::-webkit-slider-thumb {
+  background-color: var(--slider-color3);
+}
+
+#fireplace-volume::-webkit-slider-thumb {
+  background-color: var(--slider-color4);
+}
+
+.slider:hover~.button {
+  background-color: var(--moodbtn-color-sec);
+}
+
+.light,
+.dark {
+  position: absolute;
+  right: 3.5rem;
+  top: 2.5rem;
+}
